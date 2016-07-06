@@ -6,14 +6,14 @@
   // map tells the System loader where to look for things
   var map = {
     'app':                        'app', // 'dist',
-    '@angular':                   'node_modules/lib/@angular',
-    'angular2-in-memory-web-api': 'node_modules/lib/angular2-in-memory-web-api',
-    'rxjs':                       'node_modules/lib/rxjs',
-    'primeng':                    'node_modules/lib/primeng'
+    '@angular':                   'app/lib/@angular',
+    'angular2-in-memory-web-api': 'app/lib/angular2-in-memory-web-api',
+    'rxjs':                       'app/lib/rxjs',
+    'primeng':                    'app/lib/primeng'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app':                        { main: 'texp.min.js',  defaultExtension: 'js' },
+    'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'primeng':                    { defaultExtension: 'js' }
@@ -39,7 +39,7 @@
   //   packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   // }
   function packUmd(pkgName) {
-    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    packages['@angular/'+pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   }
   
   // Most environments should use UMD; some (Karma) need the individual index files

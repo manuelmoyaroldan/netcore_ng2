@@ -6,10 +6,10 @@
   // map tells the System loader where to look for things
   var map = {
     'app':                        'app', // 'dist',
-    '@angular':                   'node_modules/lib/@angular',
-    'angular2-in-memory-web-api': 'node_modules/lib/angular2-in-memory-web-api',
-    'rxjs':                       'node_modules/lib/rxjs',
-    'primeng':                    'node_modules/lib/primeng'
+    '@angular':                   'app/lib/@angular',
+    'angular2-in-memory-web-api': 'app/lib/angular2-in-memory-web-api',
+    'rxjs':                       'app/lib/rxjs',
+    'primeng':                    'app/lib/primeng'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {

@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import {testComponent} from './test/test.component' 
+import {testComponent} from './Views/test/test.component' 
  
 export const routes: RouterConfig = [
   {path: '', redirectTo: '/test', pathMatch: 'prefix'},

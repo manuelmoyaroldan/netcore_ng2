@@ -8,13 +8,15 @@
     'app':                        'app', // 'dist',
     '@angular':                   'node_modules/lib/@angular',
     'angular2-in-memory-web-api': 'node_modules/lib/angular2-in-memory-web-api',
-    'rxjs':                       'node_modules/lib/rxjs'
+    'rxjs':                       'node_modules/lib/rxjs',
+    'primeng':                    'node_modules/lib/primeng'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'texp.min.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'primeng':                    { defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',

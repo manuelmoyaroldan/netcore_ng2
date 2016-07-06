@@ -53,7 +53,9 @@ gulp.task('copy-lib', function () {
         gulp.src([
     'node_modules/@angular/**/*',
     'node_modules/angular2-in-memory-web-api/**/*',
-    'node_modules/rxjs/**/*'
+    'node_modules/rxjs/**/*',
+    'node_modules/primeng/**/*',
+    'node_modules/primeui/**/*'
     ],{base:'./node_modules/'}).pipe(gulp.dest('wwwroot/app/lib'));
 });
 

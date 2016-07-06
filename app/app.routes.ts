@@ -3,7 +3,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 import {testComponent} from './test/test.component' 
  
 export const routes: RouterConfig = [
-  //{path: '', redirectTo: '/test'},
+  {path: '', redirectTo: '/test', pathMatch: 'prefix'},
   {path: 'test', component: testComponent}
 ];
 

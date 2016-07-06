@@ -24,7 +24,10 @@
     "zone.js": "^0.6.12",
     
     "angular2-in-memory-web-api": "0.0.14",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+
+    "primeng": "1.0.0-beta.9",
+    "primeui": "4.1.12"
   },
   "devDependencies": {
     "browser-sync": "^2.12.8",

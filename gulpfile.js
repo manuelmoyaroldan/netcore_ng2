@@ -64,7 +64,7 @@ gulp.task("ts:lint", function() {
     return gulp.src([
         "app/**/**.ts"
     ])
-    .pipe(tslint({ }))
+    .pipe(tslint())
     .pipe(tslint.report("verbose"));
 });
 
@@ -78,7 +78,17 @@ gulp.task("build:ts", function() {
             "typings/index.d.ts"
         ])
         .pipe(tsc(tsProject))
-        .js.pipe(gulp.dest("app/"));
+        .js.pipe(gulp.dest("./wwwroot/app"));
+        //.js.pipe(gulp.dest("app/"));
+});
+//ts - task to transpile TypeScript files to JavaScript using Gulp-TypeScript 
+gulp.task('ts', function (done) {    
+    return gulp.src([
+            "app/**/**.ts",
+            "typings/index.d.ts"
+        ])
+        .pipe(tsc(tsProject))
+        .js.pipe(gulp.dest("./wwwroot/app"));
 });
 
 gulp.task("clean:js", function (cb) {
@@ -121,6 +131,11 @@ gulp.task("copy-assets", function() {
     'app/Views/**/*',
     'app/Styles/**/*'
     ],{base:'./app/'}).pipe(gulp.dest('wwwroot/app/'));
+});
+// copy static assets - i.e. non TypeScript compiled source
+gulp.task('copy:assets', ['clean'], function() {
+  return gulp.src(['app/**/*', 'index.html', 'styles.css', '!app/**/*.ts'], { base : './' })
+    .pipe(gulp.dest('dist'))
 });
 
 //<start> Standard Javascript and Css tasks

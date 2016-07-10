@@ -9,18 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var primeng_1 = require('primeng/primeng');
-var testComponent = (function () {
-    function testComponent() {
+var travelComponent = (function () {
+    function travelComponent() {
     }
-    testComponent = __decorate([
+    travelComponent = __decorate([
         core_1.Component({
-            selector: 'test-component',
-            template: '<div>Home <input type="text" pInputText/></div>',
-            directives: [primeng_1.InputText]
+            selector: 'travel-component',
+            template: '<div>travel-component</div>'
         }), 
         __metadata('design:paramtypes', [])
-    ], testComponent);
-    return testComponent;
+    ], travelComponent);
+    return travelComponent;
 }());
-exports.testComponent = testComponent;
+exports.travelComponent = travelComponent;

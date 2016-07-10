@@ -134,8 +134,8 @@ gulp.task("copy-assets", function() {
 });
 // copy static assets - i.e. non TypeScript compiled source
 gulp.task('copy:assets', ['clean'], function() {
-  return gulp.src(['app/**/*', 'index.html', 'styles.css', '!app/**/*.ts'], { base : './' })
-    .pipe(gulp.dest('dist'))
+  return gulp.src(['app/**/*', 'index.html', 'styles.css', '!app/**/*.ts'], { base : './app/' })
+    .pipe(gulp.dest('wwwroot/app/'))
 });
 
 //<start> Standard Javascript and Css tasks
@@ -208,4 +208,5 @@ gulp.task("watch-ui", ["default"], function () {
 });
 
 //gulp.task('default', ['ts:lint', 'build:ts', 'clean','copy-lib','bundle','copy-assets']);
-gulp.task('default', ['build:ts', 'clean','copy-lib','bundle','copy-assets']);
+//gulp.task('default', ['build:ts', 'clean','copy-lib','bundle','copy-assets']);
+gulp.task('default', ['build:ts', 'clean','copy:assets']);

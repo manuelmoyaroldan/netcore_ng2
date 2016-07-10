@@ -1,10 +1,12 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import {testComponent} from './Views/test/test.component' 
+import {testComponent} from './Views/test/test.component' ;
+import {travelComponent} from './Views/travel/travel.component';
  
 export const routes: RouterConfig = [
-  {path: '', redirectTo: '/test', pathMatch: 'prefix'},
-  {path: 'test', component: testComponent}
+  //{path: '', redirectTo: '/test', pathMatch: 'prefix'},
+  {path: '', component: testComponent},
+  {path: 'travel', component: travelComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [

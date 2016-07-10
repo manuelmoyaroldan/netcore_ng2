@@ -5,7 +5,7 @@ import {InputText} from 'primeng/primeng';
 
 @Component({
     selector: 'test-component',
-    template: '<div>testcomponent <input type="text" pInputText/></div>',
+    template: '<div>Home <input type="text" pInputText/></div>',
     directives: [InputText]
 })
 

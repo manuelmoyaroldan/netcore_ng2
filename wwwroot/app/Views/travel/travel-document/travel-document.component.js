@@ -9,12 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var travel_service_1 = require('../shared/travel.service');
 var traveldocumentComponent = (function () {
-    function traveldocumentComponent(service) {
+    function traveldocumentComponent(service, router, route) {
         this.service = service;
+        this.router = router;
+        this.route = route;
     }
     traveldocumentComponent.prototype.ngOnInit = function () {
+        // (+) converts string 'id' to a number
+        var id = +this.route.snapshot.params['id'];
+        console.log('Travel Document on Init');
+        console.log(id);
         this.travels = this.service.getTravels();
     };
     traveldocumentComponent = __decorate([
@@ -23,7 +30,7 @@ var traveldocumentComponent = (function () {
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
             providers: [travel_service_1.TravelService]
         }), 
-        __metadata('design:paramtypes', [travel_service_1.TravelService])
+        __metadata('design:paramtypes', [travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])
     ], traveldocumentComponent);
     return traveldocumentComponent;
 }());

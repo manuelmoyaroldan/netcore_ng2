@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {TravelService} from '../shared/travel.service';
 
@@ -12,9 +13,14 @@ export class traveldocumentComponent implements OnInit {
     
     travels: string;
 
-    constructor(private service: TravelService){}
+    constructor(private service: TravelService, private router: Router, private route: ActivatedRoute){
+    }
 
     ngOnInit(){
+        // (+) converts string 'id' to a number
+        let id = +this.route.snapshot.params['id'];
+        console.log('Travel Document on Init');
+        console.log(id);
         this.travels=this.service.getTravels();
     }
 

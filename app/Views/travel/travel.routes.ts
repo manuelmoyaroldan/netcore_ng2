@@ -5,5 +5,6 @@ import {travellistComponent} from './travel-list/travel-list.component';
 
 export const TravelRoutes: RouterConfig=[
     { path: 'traveldocument/:id', component: traveldocumentComponent},
+    { path: 'traveldocument/:mode/:id', component: traveldocumentComponent},
     { path: 'travellist', component: travellistComponent}
 ];

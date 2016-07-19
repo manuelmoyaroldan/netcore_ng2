@@ -19,8 +19,10 @@ export class traveldocumentComponent implements OnInit {
     ngOnInit(){
         // (+) converts string 'id' to a number
         let id = +this.route.snapshot.params['id'];
+        let mode=this.route.snapshot.params['mode'];
         console.log('Travel Document on Init');
         console.log(id);
+        console.log(mode);
         this.travels=this.service.getTravels();
     }
 

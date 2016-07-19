@@ -20,8 +20,10 @@ var traveldocumentComponent = (function () {
     traveldocumentComponent.prototype.ngOnInit = function () {
         // (+) converts string 'id' to a number
         var id = +this.route.snapshot.params['id'];
+        var mode = this.route.snapshot.params['mode'];
         console.log('Travel Document on Init');
         console.log(id);
+        console.log(mode);
         this.travels = this.service.getTravels();
     };
     traveldocumentComponent = __decorate([

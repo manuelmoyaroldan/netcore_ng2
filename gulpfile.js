@@ -199,12 +199,16 @@ gulp.task('watch-server', ['build:csharp'], function() {
 //Run this task using "gulp watch-ui" to automatically rebuild UI upon any ts file changes
 gulp.task("watch-ui", ["default"], function () {
 
-    browserSync.init({
-        server: "."
-    });
+    // browserSync.init({
+    //     server: "."
+    // });
 
-    gulp.watch([paths.ts], ["default"]);
-    gulp.watch(paths.js).on('change', browserSync.reload); 
+    //gulp.watch([paths.ts], ["default"]);
+    gulp.watch([paths.ts]).on('change', 'default');
+    // gulp.watch(paths.js).on('change', browserSync.reload); 
+});
+gulp.task('watch-mmo', function () {
+  gulp.watch(paths.ts, ['default']);
 });
 
 //gulp.task('default', ['ts:lint', 'build:ts', 'clean','copy-lib','bundle','copy-assets']);

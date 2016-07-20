@@ -16,6 +16,15 @@ var traveldocumentComponent = (function () {
         this.service = service;
         this.router = router;
         this.route = route;
+        this.current = { id: -1,
+            destination: '',
+            manager: null,
+            from: null,
+            to: null,
+            type: null,
+            purpose: null,
+            user: null,
+            reason: null };
     }
     traveldocumentComponent.prototype.ngOnInit = function () {
         // (+) converts string 'id' to a number
@@ -25,6 +34,10 @@ var traveldocumentComponent = (function () {
         console.log(id);
         console.log(mode);
         this.travels = this.service.getTravels();
+        if (id == 0) {
+            this.current.id = 0;
+            this.current.destination = '';
+        }
     };
     traveldocumentComponent = __decorate([
         core_1.Component({

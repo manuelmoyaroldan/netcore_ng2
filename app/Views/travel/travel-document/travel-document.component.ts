@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {TravelService} from '../shared/travel.service';
+//import {ITravel} from '../../../Views/shared/interfaces';
+import {ITravel} from '../../../Views/shared/interfaces';
 
 @Component({
     selector: 'travel-document',
@@ -12,6 +14,16 @@ import {TravelService} from '../shared/travel.service';
 export class traveldocumentComponent implements OnInit {
     
     travels: string;
+    
+    current: ITravel={id: -1
+        , destination: ''
+        , manager: null
+        , from: null
+        , to: null
+        , type: null
+        , purpose: null
+        , user:null
+        , reason: null};
 
     constructor(private service: TravelService, private router: Router, private route: ActivatedRoute){
     }
@@ -24,6 +36,10 @@ export class traveldocumentComponent implements OnInit {
         console.log(id);
         console.log(mode);
         this.travels=this.service.getTravels();
+        if(id==0){
+            this.current.id=0;
+            this.current.destination='';
+        }
     }
 
 }

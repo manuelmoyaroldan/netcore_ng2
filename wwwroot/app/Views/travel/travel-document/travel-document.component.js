@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var travel_service_1 = require('../shared/travel.service');
 var user_context_service_1 = require('../../user/user-context.service');
+var purpose_selector_component_1 = require('../../purpose/purpose-selector.component');
 var traveldocumentComponent = (function () {
     function traveldocumentComponent(userContext, service, router, route) {
         this.userContext = userContext;
@@ -45,6 +46,7 @@ var traveldocumentComponent = (function () {
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
+            directives: [purpose_selector_component_1.purposeselectorComponent],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

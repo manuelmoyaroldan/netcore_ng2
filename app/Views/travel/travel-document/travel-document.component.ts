@@ -7,10 +7,13 @@ import {ITravel} from '../../../Views/shared/interfaces';
 
 import {UserContextService} from '../../user/user-context.service'
 
+import {purposeselectorComponent} from '../../purpose/purpose-selector.component';
+
 
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
+    directives: [purposeselectorComponent],
     providers: [TravelService]
 })
 

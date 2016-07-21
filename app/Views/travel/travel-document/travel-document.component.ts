@@ -5,6 +5,9 @@ import {TravelService} from '../shared/travel.service';
 //import {ITravel} from '../../../Views/shared/interfaces';
 import {ITravel} from '../../../Views/shared/interfaces';
 
+import {UserContextService} from '../../user/user-context.service'
+
+
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
@@ -25,16 +28,16 @@ export class traveldocumentComponent implements OnInit {
         , user:null
         , reason: null};
 
-    constructor(private service: TravelService, private router: Router, private route: ActivatedRoute){
+    constructor(private userContext: UserContextService,private service: TravelService, private router: Router, private route: ActivatedRoute){
     }
 
     ngOnInit(){
         // (+) converts string 'id' to a number
         let id = +this.route.snapshot.params['id'];
         let mode=this.route.snapshot.params['mode'];
-        console.log('Travel Document on Init');
-        console.log(id);
-        console.log(mode);
+        // console.log('Travel Document on Init');
+        // console.log(id);
+        // console.log(mode);
         this.travels=this.service.getTravels();
         if(id==0){
             this.current.id=0;

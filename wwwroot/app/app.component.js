@@ -10,17 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var user_context_service_1 = require('./Views/user/user-context.service');
+var user_service_1 = require('./Views/user/user.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(userContext) {
+        this.userContext = userContext;
+        this.userId = 1;
+        userContext.loadUser(this.userId);
+        //logger.logInfo('AppComponent initialized');
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             //template: '<router-outlet></router-outlet>',
             templateUrl: '/app/app.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES],
+            providers: [user_context_service_1.UserContextService, user_service_1.UserService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_context_service_1.UserContextService])
     ], AppComponent);
     return AppComponent;
 }());

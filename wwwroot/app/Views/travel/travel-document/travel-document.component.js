@@ -11,8 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var travel_service_1 = require('../shared/travel.service');
+var user_context_service_1 = require('../../user/user-context.service');
 var traveldocumentComponent = (function () {
-    function traveldocumentComponent(service, router, route) {
+    function traveldocumentComponent(userContext, service, router, route) {
+        this.userContext = userContext;
         this.service = service;
         this.router = router;
         this.route = route;
@@ -30,9 +32,9 @@ var traveldocumentComponent = (function () {
         // (+) converts string 'id' to a number
         var id = +this.route.snapshot.params['id'];
         var mode = this.route.snapshot.params['mode'];
-        console.log('Travel Document on Init');
-        console.log(id);
-        console.log(mode);
+        // console.log('Travel Document on Init');
+        // console.log(id);
+        // console.log(mode);
         this.travels = this.service.getTravels();
         if (id == 0) {
             this.current.id = 0;
@@ -45,7 +47,7 @@ var traveldocumentComponent = (function () {
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
             providers: [travel_service_1.TravelService]
         }), 
-        __metadata('design:paramtypes', [travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])
     ], traveldocumentComponent);
     return traveldocumentComponent;
 }());

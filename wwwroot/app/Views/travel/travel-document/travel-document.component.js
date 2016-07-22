@@ -25,7 +25,7 @@ var traveldocumentComponent = (function () {
             from: null,
             to: null,
             type: null,
-            purpose: null,
+            purpose: { id: 1, name: 'TEST' },
             user: null,
             reason: null };
     }

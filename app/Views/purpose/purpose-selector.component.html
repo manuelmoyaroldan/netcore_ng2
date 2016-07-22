@@ -1,3 +1,6 @@
 <div>
-    purpose selector
+    <select class="form-control" required [(ngModel)]="selected" (ngModelChange)="selectedChange.emit($event);" >
+         <option *ngFor="let p of purposes" [ngValue]="p">{{p.name}}</option>
+    </select>
+    <input [ngModel]="test" (ngModelChange)="testChange.emit($event);" >
 </div>

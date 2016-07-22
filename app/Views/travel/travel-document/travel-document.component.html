@@ -3,8 +3,7 @@
     <br>
     <input [(ngModel)]="current.id" placeholder="id" readonly="true">
     <input [(ngModel)]="current.destination" placeholder="destination">
-    {{current}}
-    {{userContext.name}} 
-    <purpose-selector></purpose-selector>
-
+    <input [(ngModel)]="travels" placeholder="travels">
+    <input [(ngModel)]="current.purpose.name" placeholder="purpose" readonly="true">
+    <purpose-selector [(selected)]="current.purpose" [(test)]="travels"></purpose-selector>
 </div>

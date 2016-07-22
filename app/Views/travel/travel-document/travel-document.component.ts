@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import {TravelService} from '../shared/travel.service';
 //import {ITravel} from '../../../Views/shared/interfaces';
-import {ITravel} from '../../../Views/shared/interfaces';
+import {ITravel, ITravelPurpose} from '../../../Views/shared/interfaces';
 
 import {UserContextService} from '../../user/user-context.service'
 
@@ -18,8 +18,7 @@ import {purposeselectorComponent} from '../../purpose/purpose-selector.component
 })
 
 export class traveldocumentComponent implements OnInit {
-    
-    travels: string;
+    travels: any;
     
     current: ITravel={id: -1
         , destination: ''
@@ -27,7 +26,7 @@ export class traveldocumentComponent implements OnInit {
         , from: null
         , to: null
         , type: null
-        , purpose: null
+        , purpose: {id: 1, name: 'TEST'} 
         , user:null
         , reason: null};
 

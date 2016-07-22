@@ -10,10 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var purposeselectorComponent = (function () {
+    //selectedPurpose: any;
     function purposeselectorComponent() {
+        this.testChange = new core_1.EventEmitter();
+        this.selectedChange = new core_1.EventEmitter();
     }
     purposeselectorComponent.prototype.ngOnInit = function () {
+        //this.selectedPurpose={id: 3, name: 'VISIT'};
+        this.purposes = [];
+        this.purposes.push({ id: 1, name: 'TRAINING' });
+        this.purposes.push({ id: 2, name: 'PROJECT' });
+        this.purposes.push({ id: 3, name: 'VISIT' });
+        this.purposes.push({ id: 4, name: 'TEST 01' });
+        this.purposes.push({ id: 5, name: 'TEST 02' });
+        //this.selectedPurpose=this.purposes[3];
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], purposeselectorComponent.prototype, "selected", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], purposeselectorComponent.prototype, "test", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], purposeselectorComponent.prototype, "testChange", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], purposeselectorComponent.prototype, "selectedChange", void 0);
     purposeselectorComponent = __decorate([
         core_1.Component({
             selector: 'purpose-selector',

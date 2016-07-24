@@ -10,25 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var PurposeService = (function () {
-    function PurposeService(http) {
+var CostcenterService = (function () {
+    function CostcenterService(http) {
         this.http = http;
-        this.purposes = [];
+        this.costcenters = [];
     }
-    PurposeService.prototype.getPurposes = function () {
-        //this.purposes=[];
-        this.purposes.push({ id: 1, name: 'TRAINING' });
-        this.purposes.push({ id: 2, name: 'PROJECT' });
-        this.purposes.push({ id: 3, name: 'VISIT' });
-        this.purposes.push({ id: 4, name: 'TEST 01' });
-        this.purposes.push({ id: 5, name: 'TEST 02' });
-        //this.selectedChange.emit(this.selected);
-        return this.purposes;
+    CostcenterService.prototype.getCostCenters = function () {
+        this.costcenters.push({ id: 1, name: 'ALR-FINANCE' });
+        this.costcenters.push({ id: 2, name: 'ALR-PROJECT' });
+        this.costcenters.push({ id: 3, name: 'ALR-IT' });
+        this.costcenters.push({ id: 4, name: 'ALR-TECHNICAL' });
+        this.costcenters.push({ id: 5, name: 'ALR-OPS' });
+        return this.costcenters;
     };
-    PurposeService = __decorate([
+    CostcenterService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], PurposeService);
-    return PurposeService;
+    ], CostcenterService);
+    return CostcenterService;
 }());
-exports.PurposeService = PurposeService;
+exports.CostcenterService = CostcenterService;

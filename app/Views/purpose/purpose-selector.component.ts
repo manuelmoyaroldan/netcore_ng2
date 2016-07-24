@@ -2,11 +2,13 @@ import {Component, OnInit, Input, EventEmitter, Output, DoCheck } from '@angular
 
 import {Dropdown} from 'primeng/primeng';
 
+import {PurposeService} from './purpose.service';
 import {ITravelPurpose,ITravel} from '../shared/interfaces';
 
 @Component({ 
     selector: 'purpose-selector',
-    templateUrl: 'app/Views/purpose/purpose-selector.component.html'
+    templateUrl: 'app/Views/purpose/purpose-selector.component.html',
+    providers: [PurposeService]
 })
 
 export class purposeselectorComponent{
@@ -14,25 +16,22 @@ export class purposeselectorComponent{
     @Input() test: String;
     @Output() testChange = new  EventEmitter();
     @Output() selectedChange = new  EventEmitter();
-    //@Output() modelExport: EventEmitter = new EventEmitter();
-    //@Output() ngModelChange:EventEmitter; 
-    
+     
     purposes: ITravelPurpose[];
-    //selectedPurpose: any;
     
-    constructor(){
+    constructor(private service:PurposeService){
     }
     ngOnInit(){
-
         //this.selectedPurpose={id: 3, name: 'VISIT'};
-        this.purposes=[];
-        this.purposes.push({id: 1, name: 'TRAINING'});
-        this.purposes.push({id: 2, name: 'PROJECT'});
-        this.purposes.push({id: 3, name: 'VISIT'});
-        this.purposes.push({id: 4, name: 'TEST 01'});
-        this.purposes.push({id: 5, name: 'TEST 02'});
-                
+        // this.purposes=[];
+        // this.purposes.push({id: 1, name: 'TRAINING'});
+        // this.purposes.push({id: 2, name: 'PROJECT'});
+        // this.purposes.push({id: 3, name: 'VISIT'});
+        // this.purposes.push({id: 4, name: 'TEST 01'});
+        // this.purposes.push({id: 5, name: 'TEST 02'});
+        //this.selectedChange.emit(this.selected);
         //this.selectedPurpose=this.purposes[3];
+        this.purposes=this.service.getPurposes();
     }
     //  onChange() {
     //   console.log(this.selectedPurpose);

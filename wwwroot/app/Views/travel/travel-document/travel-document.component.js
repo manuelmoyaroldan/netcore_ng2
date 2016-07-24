@@ -13,6 +13,8 @@ var router_1 = require('@angular/router');
 var travel_service_1 = require('../shared/travel.service');
 var user_context_service_1 = require('../../user/user-context.service');
 var purpose_selector_component_1 = require('../../purpose/purpose-selector.component');
+var travelway_selector_component_1 = require('../../travelway/travelway-selector.component');
+var costcenter_selector_component_1 = require('../../costcenter/costcenter-selector.component');
 var traveldocumentComponent = (function () {
     function traveldocumentComponent(userContext, service, router, route) {
         this.userContext = userContext;
@@ -25,9 +27,11 @@ var traveldocumentComponent = (function () {
             from: null,
             to: null,
             type: null,
-            purpose: { id: 1, name: 'TEST' },
+            purpose: { id: 2, name: 'PROJECT' },
             user: null,
-            reason: null };
+            reason: null,
+            costcenter: { id: 3, name: 'ALR-IT' }
+        };
     }
     traveldocumentComponent.prototype.ngOnInit = function () {
         // (+) converts string 'id' to a number
@@ -42,11 +46,15 @@ var traveldocumentComponent = (function () {
             this.current.destination = '';
         }
     };
+    traveldocumentComponent.prototype.onCancel = function (event) {
+        event.preventDefault();
+        this.current.costcenter = { id: 3, name: 'ALR-IT' };
+    };
     traveldocumentComponent = __decorate([
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-            directives: [purpose_selector_component_1.purposeselectorComponent],
+            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

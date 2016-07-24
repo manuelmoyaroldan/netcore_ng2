@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var purpose_service_1 = require('./purpose.service');
 var purposeselectorComponent = (function () {
-    //selectedPurpose: any;
-    function purposeselectorComponent() {
+    function purposeselectorComponent(service) {
+        this.service = service;
         this.testChange = new core_1.EventEmitter();
         this.selectedChange = new core_1.EventEmitter();
     }
     purposeselectorComponent.prototype.ngOnInit = function () {
         //this.selectedPurpose={id: 3, name: 'VISIT'};
-        this.purposes = [];
-        this.purposes.push({ id: 1, name: 'TRAINING' });
-        this.purposes.push({ id: 2, name: 'PROJECT' });
-        this.purposes.push({ id: 3, name: 'VISIT' });
-        this.purposes.push({ id: 4, name: 'TEST 01' });
-        this.purposes.push({ id: 5, name: 'TEST 02' });
+        // this.purposes=[];
+        // this.purposes.push({id: 1, name: 'TRAINING'});
+        // this.purposes.push({id: 2, name: 'PROJECT'});
+        // this.purposes.push({id: 3, name: 'VISIT'});
+        // this.purposes.push({id: 4, name: 'TEST 01'});
+        // this.purposes.push({id: 5, name: 'TEST 02'});
+        //this.selectedChange.emit(this.selected);
         //this.selectedPurpose=this.purposes[3];
+        this.purposes = this.service.getPurposes();
     };
     __decorate([
         core_1.Input(), 
@@ -44,9 +47,10 @@ var purposeselectorComponent = (function () {
     purposeselectorComponent = __decorate([
         core_1.Component({
             selector: 'purpose-selector',
-            templateUrl: 'app/Views/purpose/purpose-selector.component.html'
+            templateUrl: 'app/Views/purpose/purpose-selector.component.html',
+            providers: [purpose_service_1.PurposeService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [purpose_service_1.PurposeService])
     ], purposeselectorComponent);
     return purposeselectorComponent;
 }());

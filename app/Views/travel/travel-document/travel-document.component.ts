@@ -8,12 +8,13 @@ import {ITravel, ITravelPurpose} from '../../../Views/shared/interfaces';
 import {UserContextService} from '../../user/user-context.service'
 
 import {purposeselectorComponent} from '../../purpose/purpose-selector.component';
-
+import {travelwayselectorComponent} from '../../travelway/travelway-selector.component';
+import {costcenterselectorComponent} from '../../costcenter/costcenter-selector.component';
 
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent ],
     providers: [TravelService]
 })
 
@@ -26,9 +27,11 @@ export class traveldocumentComponent implements OnInit {
         , from: null
         , to: null
         , type: null
-        , purpose: {id: 1, name: 'TEST'} 
+        , purpose: {id: 2, name: 'PROJECT'} 
         , user:null
-        , reason: null};
+        , reason: null
+        , costcenter: {id: 3, name: 'ALR-IT'}
+    };
 
     constructor(private userContext: UserContextService,private service: TravelService, private router: Router, private route: ActivatedRoute){
     }
@@ -45,6 +48,10 @@ export class traveldocumentComponent implements OnInit {
             this.current.id=0;
             this.current.destination='';
         }
+    }
+    onCancel(event: Event) {
+        event.preventDefault();
+        this.current.costcenter={id: 3, name: 'ALR-IT'};
     }
 
 }

@@ -7,7 +7,8 @@ export interface ITravel{
     manager: IUser;
     type: ITravelType;  
     purpose: ITravelPurpose; 
-    reason: string
+    reason: string;
+    costcenter: ICostCenter
 }
 export interface ITravelType{
     id: number;
@@ -21,4 +22,8 @@ export interface IUser{
     id: number;
     name: string;
     email: string;
+}
+export interface ICostCenter{
+    id: number;
+    name: string
 }

@@ -1,9 +1,16 @@
 <div>
     travel-document {{current.id}}
     <br>
+    {{current | json}}
+    <br>
     <input [(ngModel)]="current.id" placeholder="id" readonly="true">
     <input [(ngModel)]="current.destination" placeholder="destination">
     <input [(ngModel)]="travels" placeholder="travels">
     <input [(ngModel)]="current.purpose.name" placeholder="purpose" readonly="true">
+    <button  (click)="myclick"></button>
+    <button class="btn btn-default" (click)="onCancel($event)">Myclick</button>
     <purpose-selector [(selected)]="current.purpose" [(test)]="travels"></purpose-selector>
+    <travelway-selector></travelway-selector>
+    
+    <costcenter-selector [(selected)]="current.costcenter"></costcenter-selector>
 </div>

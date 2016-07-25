@@ -3,12 +3,12 @@ export interface ITravel{
     destination: string;
     from: Date;
     to: Date;
-    user: IUser;
-    manager: IUser;
+    user?: IUser;
+    manager?: IUser;
     type: ITravelType;  
     purpose: ITravelPurpose; 
     reason: string;
-    costcenter: ICostCenter
+    costcenter?: ICostCenter
 }
 export interface ITravelType{
     id: number;
@@ -21,9 +21,11 @@ export interface ITravelPurpose{
 export interface IUser{
     id: number;
     name: string;
-    email: string;
+    email?: string;
+    manager?: IUser;
 }
 export interface ICostCenter{
     id: number;
     name: string
 }
+

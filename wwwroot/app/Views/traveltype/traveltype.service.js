@@ -9,20 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserService = (function () {
-    function UserService() {
+var TraveltypeService = (function () {
+    function TraveltypeService() {
+        this.list = [];
     }
-    UserService.prototype.getUserById = function (userId) {
-        return { name: 'mmo107', role: 'Admin' };
+    TraveltypeService.prototype.getAll = function () {
+        this.list.push({ id: 1, name: 'LOCAL' });
+        this.list.push({ id: 2, name: 'FOREIGN' });
+        return this.list;
     };
-    UserService.prototype.getUser = function () {
-        var temp = { id: 1, name: "MMO107" };
-        return temp;
-    };
-    UserService = __decorate([
+    TraveltypeService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], UserService);
-    return UserService;
+    ], TraveltypeService);
+    return TraveltypeService;
 }());
-exports.UserService = UserService;
+exports.TraveltypeService = TraveltypeService;

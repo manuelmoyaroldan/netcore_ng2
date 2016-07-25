@@ -19,7 +19,7 @@ export class costcenterselectorComponent{
 
     ngOnInit(){
         this.costcenters=this.service.getCostCenters();
-        this.selected=this.costcenters.find(c=> c.id===this.selected.id);
+        //this.selected=this.costcenters.find(c=> c.id===this.selected.id);
     }
 
     onChange(value){
@@ -30,11 +30,14 @@ export class costcenterselectorComponent{
         //console.log(this.costcenters.find((c: ICostCenter)=> c.id===value));
         //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
         //this.selectedChange.emit(temp);
-        this.selectedChange.emit(value);
         //console.log(temp);
         //console.log(this.costcenters); 
         //console.log(this.costcenters.find(c=> c.id=value));
         //alert(this.costcenters.findIndex(c=> c.id=value));
+        this.selectedChange.emit(value);
+        console.log("onchange ->"+value);
+        //this.selectedChange.emit();
+        //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
     }
 
 }

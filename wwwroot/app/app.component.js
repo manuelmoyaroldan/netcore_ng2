@@ -16,7 +16,7 @@ var AppComponent = (function () {
     function AppComponent(userContext) {
         this.userContext = userContext;
         this.userId = 1;
-        userContext.loadUser(this.userId);
+        //userContext.loadUser(this.userId);
         //logger.logInfo('AppComponent initialized');
     }
     AppComponent = __decorate([

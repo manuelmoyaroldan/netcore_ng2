@@ -16,9 +16,8 @@ var costcenterselectorComponent = (function () {
         this.selectedChange = new core_1.EventEmitter();
     }
     costcenterselectorComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.costcenters = this.service.getCostCenters();
-        this.selected = this.costcenters.find(function (c) { return c.id === _this.selected.id; });
+        //this.selected=this.costcenters.find(c=> c.id===this.selected.id);
     };
     costcenterselectorComponent.prototype.onChange = function (value) {
         //this.costcenters.find(c=> c.id=value);
@@ -28,11 +27,14 @@ var costcenterselectorComponent = (function () {
         //console.log(this.costcenters.find((c: ICostCenter)=> c.id===value));
         //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
         //this.selectedChange.emit(temp);
-        this.selectedChange.emit(value);
         //console.log(temp);
         //console.log(this.costcenters); 
         //console.log(this.costcenters.find(c=> c.id=value));
         //alert(this.costcenters.findIndex(c=> c.id=value));
+        this.selectedChange.emit(value);
+        console.log("onchange ->" + value);
+        //this.selectedChange.emit();
+        //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
     };
     __decorate([
         core_1.Input(), 

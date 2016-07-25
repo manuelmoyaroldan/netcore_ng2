@@ -1,0 +1,5 @@
+<div>
+    <select class="form-control" required [(ngModel)]="selected" (ngModelChange)="onChange($event)" >
+         <option *ngFor="let o of list" [ngValue]="o">{{o.name}}</option>
+    </select>
+</div>

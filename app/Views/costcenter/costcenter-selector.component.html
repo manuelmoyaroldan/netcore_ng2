@@ -5,9 +5,7 @@
     <select class="form-control" required [(ngModel)]="selected" name="costcenter" (ngModelChange)="onChange($event)" >
          <option *ngFor="let p of costcenters" [ngValue]="p">{{p.name}}</option>
     </select>
-    {{selected | json}}
+    <!--{{selected | json}}
     <br>
-    {{costcenters | json}}
-
-    
+    {{costcenters | json}}-->
 </div>

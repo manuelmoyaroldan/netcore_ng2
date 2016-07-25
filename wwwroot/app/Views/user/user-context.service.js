@@ -11,14 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var user_service_1 = require('./user.service');
 var UserContextService = (function () {
-    function UserContextService(userService) {
-        this.userService = userService;
+    function UserContextService(service) {
+        this.service = service;
         this.loggedInSince = new Date();
+        this.user = this.service.getUser();
     }
     UserContextService.prototype.loadUser = function (userId) {
-        var user = this.userService.getUserById(userId);
-        this.name = user.name;
-        this.role = user.role;
+        this.user = this.service.getUser();
+        //let user = this.service.getUserById(userId);
+        //this.name = user.name;
+        //this.role = user.role;
         //this.loggerService.logDebug('loaded User');
     };
     UserContextService = __decorate([

@@ -15,6 +15,7 @@ var user_context_service_1 = require('../../user/user-context.service');
 var purpose_selector_component_1 = require('../../purpose/purpose-selector.component');
 var travelway_selector_component_1 = require('../../travelway/travelway-selector.component');
 var costcenter_selector_component_1 = require('../../costcenter/costcenter-selector.component');
+var traveltype_selector_component_1 = require('../../traveltype/traveltype-selector.component');
 var traveldocumentComponent = (function () {
     function traveldocumentComponent(userContext, service, router, route) {
         this.userContext = userContext;
@@ -22,7 +23,7 @@ var traveldocumentComponent = (function () {
         this.router = router;
         this.route = route;
         this.current = { id: -1,
-            destination: '',
+            destination: 'TANGER',
             manager: null,
             from: null,
             to: null,
@@ -44,17 +45,24 @@ var traveldocumentComponent = (function () {
         if (id == 0) {
             this.current.id = 0;
             this.current.destination = '';
+            var mytemp = { id: 3, name: 'ALR-IT' };
+            this.current.costcenter = mytemp;
+            this.current.user = this.userContext.user;
+            this.current.manager = this.userContext.user.manager;
         }
     };
     traveldocumentComponent.prototype.onCancel = function (event) {
         event.preventDefault();
-        this.current.costcenter = { id: 3, name: 'ALR-IT' };
+        var mytemp = { id: 3, name: 'ALR-IT' };
+        //this.current.costcenter={id: 3, name: 'ALR-IT'};
+        this.current.costcenter = mytemp;
+        console.log("click ->" + this.current.costcenter);
     };
     traveldocumentComponent = __decorate([
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent],
+            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

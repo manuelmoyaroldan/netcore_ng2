@@ -20,7 +20,7 @@ export class AppComponent {
     private userId: number = 1;
 
     constructor(public userContext: UserContextService) {
-        userContext.loadUser(this.userId);
+        //userContext.loadUser(this.userId);
         //logger.logInfo('AppComponent initialized');
     } 
      

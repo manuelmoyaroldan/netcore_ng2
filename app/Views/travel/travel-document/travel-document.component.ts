@@ -3,18 +3,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import {TravelService} from '../shared/travel.service';
 //import {ITravel} from '../../../Views/shared/interfaces';
-import {ITravel, ITravelPurpose} from '../../../Views/shared/interfaces';
+import {ITravel, ITravelPurpose, ICostCenter} from '../../../Views/shared/interfaces';
 
 import {UserContextService} from '../../user/user-context.service'
 
 import {purposeselectorComponent} from '../../purpose/purpose-selector.component';
 import {travelwayselectorComponent} from '../../travelway/travelway-selector.component';
 import {costcenterselectorComponent} from '../../costcenter/costcenter-selector.component';
+import {traveltypeselectorComponent} from '../../traveltype/traveltype-selector.component';
 
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent ],
     providers: [TravelService]
 })
 
@@ -22,7 +23,7 @@ export class traveldocumentComponent implements OnInit {
     travels: any;
     
     current: ITravel={id: -1
-        , destination: ''
+        , destination: 'TANGER'
         , manager: null
         , from: null
         , to: null
@@ -47,11 +48,18 @@ export class traveldocumentComponent implements OnInit {
         if(id==0){
             this.current.id=0;
             this.current.destination='';
+            let mytemp: ICostCenter={id: 3, name: 'ALR-IT'}; 
+            this.current.costcenter=mytemp;
+            this.current.user=this.userContext.user;
+            this.current.manager=this.userContext.user.manager;
         }
     }
     onCancel(event: Event) {
         event.preventDefault();
-        this.current.costcenter={id: 3, name: 'ALR-IT'};
-    }
+        let mytemp: ICostCenter={id: 3, name: 'ALR-IT'}; 
+        //this.current.costcenter={id: 3, name: 'ALR-IT'};
+        this.current.costcenter=mytemp;
+        console.log("click ->"+this.current.costcenter);
+    } 
 
 }

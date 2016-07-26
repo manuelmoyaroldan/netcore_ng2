@@ -1,13 +1,15 @@
 export interface ITravel{
     id: number;
-    destination: string;
-    from: Date;
-    to: Date;
+    destination?: string;
+    from?: Date;
+    to?: Date;
     user?: IUser;
     manager?: IUser;
-    type: ITravelType;  
-    purpose: ITravelPurpose; 
-    reason: string;
+    type?: ITravelType;  
+    purpose?: ITravelPurpose; 
+    id_purpose?: number;
+    reason?: string;
+    id_costcenter?: number;
     costcenter?: ICostCenter
 }
 export interface ITravelType{

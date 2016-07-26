@@ -2,9 +2,16 @@
     <!--<select class="form-control" required [(ngModel)]="selected.id" name="costcenter" (ngModelChange)="selectedChange.emit($event);" >
          <option *ngFor="let p of costcenters" [ngValue]="p.id">{{p.name}}</option>
     </select>-->
-    <select class="form-control" required [(ngModel)]="selected" name="costcenter" (ngModelChange)="onChange($event)" >
-         <option *ngFor="let p of costcenters" [ngValue]="p">{{p.name}}</option>
+    {{idSelected}}
+    <select class="form-control" required [(ngModel)]="idSelected" name="costcenter" (ngModelChange)="onChange($event);" >
+         <option *ngFor="let p of costcenters" [ngValue]="p.id">{{p.name}}</option>
     </select>
+    <!--<select class="form-control" required [(ngModel)]="idSelected" name="costcenter" (ngModelChange)="idSelectedChange.emit($event);">
+         <option *ngFor="let p of costcenters" [ngValue]="p.id">{{p.name}}</option>
+    </select>-->
+    <!--<select class="form-control" required [(ngModel)]="selected" name="costcenter" (ngModelChange)="onChange($event)" >
+         <option *ngFor="let p of costcenters" [ngValue]="p">{{p.name}}</option>
+    </select>-->
     <!--{{selected | json}}
     <br>
     {{costcenters | json}}-->

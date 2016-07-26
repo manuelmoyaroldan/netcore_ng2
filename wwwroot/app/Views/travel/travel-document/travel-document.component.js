@@ -31,8 +31,10 @@ var traveldocumentComponent = (function () {
             to: null,
             type: null,
             purpose: { id: 2, name: 'PROJECT' },
+            id_purpose: 2,
             user: null,
             reason: null,
+            id_costcenter: 3,
             costcenter: { id: 3, name: 'ALR-IT' }
         };
     }

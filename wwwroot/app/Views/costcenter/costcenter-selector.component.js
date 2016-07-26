@@ -14,6 +14,7 @@ var costcenterselectorComponent = (function () {
     function costcenterselectorComponent(service) {
         this.service = service;
         this.selectedChange = new core_1.EventEmitter();
+        this.idSelectedChange = new core_1.EventEmitter();
     }
     costcenterselectorComponent.prototype.ngOnInit = function () {
         this.costcenters = this.service.getCostCenters();
@@ -31,8 +32,9 @@ var costcenterselectorComponent = (function () {
         //console.log(this.costcenters); 
         //console.log(this.costcenters.find(c=> c.id=value));
         //alert(this.costcenters.findIndex(c=> c.id=value));
-        this.selectedChange.emit(value);
-        console.log("onchange ->" + value);
+        this.idSelectedChange.emit(value);
+        this.selectedChange.emit(this.costcenters.find(function (c) { return c.id === value; }));
+        //console.log("onchange ->"+value);
         //this.selectedChange.emit();
         //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
     };
@@ -41,9 +43,17 @@ var costcenterselectorComponent = (function () {
         __metadata('design:type', Object)
     ], costcenterselectorComponent.prototype, "selected", void 0);
     __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], costcenterselectorComponent.prototype, "idSelected", void 0);
+    __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], costcenterselectorComponent.prototype, "selectedChange", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], costcenterselectorComponent.prototype, "idSelectedChange", void 0);
     costcenterselectorComponent = __decorate([
         core_1.Component({
             selector: 'costcenter-selector',

@@ -11,7 +11,9 @@ import {ICostCenter} from '../shared/interfaces';
 
 export class costcenterselectorComponent{
     @Input() selected: ICostCenter;
+    @Input() idSelected: number;
     @Output() selectedChange = new  EventEmitter<ICostCenter>();
+    @Output() idSelectedChange = new  EventEmitter<number>();
 
     costcenters: ICostCenter[];
 
@@ -34,8 +36,9 @@ export class costcenterselectorComponent{
         //console.log(this.costcenters); 
         //console.log(this.costcenters.find(c=> c.id=value));
         //alert(this.costcenters.findIndex(c=> c.id=value));
-        this.selectedChange.emit(value);
-        console.log("onchange ->"+value);
+        this.idSelectedChange.emit(value);
+        this.selectedChange.emit(this.costcenters.find(c=> c.id===value));
+        //console.log("onchange ->"+value);
         //this.selectedChange.emit();
         //let temp:ICostCenter=this.costcenters.find(c=> c.id===value);
     }

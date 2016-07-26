@@ -11,11 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var travelComponent = (function () {
     function travelComponent() {
+        this.step = 1;
     }
+    travelComponent.prototype.prev = function () {
+        this.step = this.step - 1;
+    };
+    travelComponent.prototype.next = function () {
+        this.step = this.step + 1;
+    };
     travelComponent = __decorate([
         core_1.Component({
             selector: 'travel-component',
-            template: '<div>travel-component</div>'
+            templateUrl: 'app/Views/travel/travel.component.html',
+            styleUrls: ['app/Views/travel/travel.component.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], travelComponent);

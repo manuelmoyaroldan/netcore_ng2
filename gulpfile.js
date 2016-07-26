@@ -17,6 +17,7 @@ var gulp        = require("gulp"),
     runSequence = require("run-sequence"),
     mocha       = require("gulp-mocha"),
     debug       = require("gulp-debug"),
+    less        = require("gulp-less"),
     Dotnet = require('gulp-dotnet'),
     browserSync = require('browser-sync').create();
 
@@ -29,6 +30,7 @@ var paths = {
 
 paths.js = paths.webroot + "app/**/*.js";
 paths.minJs = paths.webroot + "app/**/*.min.js";
+paths.less= paths.webroot + "app/**/*.css";
 paths.css = paths.webroot + "css/**/*.css";
 paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "app/site.min.js";
@@ -137,6 +139,19 @@ gulp.task('copy:assets', ['clean'], function() {
   return gulp.src(['app/**/*', 'index.html', 'styles.css', '!app/**/*.ts'], { base : './app/' })
     .pipe(gulp.dest('wwwroot/app/'))
 });
+//less
+gulp.task("less", function () {
+  return gulp.src('app/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest(paths.less));
+});
+gulp.task('less-mmo', function() {
+    gulp.src('app/**/*.less')
+        .pipe(less())
+        .pipe(gulp.dest(function(f) {
+            return f.base;
+        }))
+});
 
 //<start> Standard Javascript and Css tasks
 
@@ -213,4 +228,4 @@ gulp.task('watch-mmo', function () {
 
 //gulp.task('default', ['ts:lint', 'build:ts', 'clean','copy-lib','bundle','copy-assets']);
 //gulp.task('default', ['build:ts', 'clean','copy-lib','bundle','copy-assets']);
-gulp.task('default', ['build:ts', 'clean','copy:assets']);
+gulp.task('default', ['build:ts','less-mmo', 'clean','copy:assets']);

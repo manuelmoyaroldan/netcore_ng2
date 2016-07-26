@@ -12,14 +12,17 @@ import {travelwayselectorComponent} from '../../travelway/travelway-selector.com
 import {costcenterselectorComponent} from '../../costcenter/costcenter-selector.component';
 import {traveltypeselectorComponent} from '../../traveltype/traveltype-selector.component';
 
+import {traveldocumentstep1Component} from './travel-document-step1.component';
+
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component ],
     providers: [TravelService]
 })
 
 export class traveldocumentComponent implements OnInit {
+    step:number=1;
     travels: any;
     
     current: ITravel={id: -1
@@ -60,6 +63,15 @@ export class traveldocumentComponent implements OnInit {
         //this.current.costcenter={id: 3, name: 'ALR-IT'};
         this.current.costcenter=mytemp;
         console.log("click ->"+this.current.costcenter);
+    }
+
+    clickPrev(){
+        this.step=this.step-1;
     } 
+    clickNext(){
+        this.step=this.step+1;
+    }
+
+
 
 }

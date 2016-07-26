@@ -1,0 +1,248 @@
+*,
+*:before,
+*:after
+{
+  @value: border-box;
+  -moz-box-sizing: @value;
+  -webkit-box-sizing: @value;
+  box-sizing: @value;
+}
+ 
+html,
+body
+{
+  background: @colorClouds;
+  color: #444;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.how-to-guide
+{
+  .border-radius(2px);
+  background: @colorWetAsphalt;
+  color: @colorClouds;
+  margin: 0;
+  padding: 0 0 @navHeight;
+  position: relative;
+  text-align: left;
+  width: @width;
+  
+  &:before
+  {
+    border: 10px solid transparent;
+    border-right-color: @colorWetAsphalt;
+    content: '';
+    height: 0;
+    left: -20px;
+    position: absolute;
+    top: 20px;
+    width: 0;
+  }
+  
+  .button-close
+  {
+    .transition(color @transitionDefault);
+    background: none;
+    border: none;
+    color: @colorClouds;
+    font-size: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    
+    &:hover,
+    &:focus
+    {
+      color: @colorPeterRiver;
+      cursor: pointer;
+    }
+  }
+  
+  .navigation
+  {
+    background: @colorMidnightBlue;
+    border-top: 1px solid #414141;
+    bottom: 0;
+    font-size: .8em;
+    height: @navHeight;
+    left: 0;
+    line-height: 1em;
+    padding: 13px;
+    position: absolute;
+    width: 100%;
+    
+    .nav-state
+    {
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .button-nav
+    {
+      .border-radius(2px);
+      .transition(background @transitionDefault);
+      background: @colorWetAsphalt;
+      border: none;
+      color: @colorClouds;
+      font-size: .9em;
+      padding: 5px 20px;
+      position: absolute;
+      top: 5px;
+      
+      &:hover,
+      &:focus
+      {
+        background: @colorPeterRiver;
+        cursor: pointer;
+      }
+      
+      &.disabled
+      {
+        color: @colorSilver;
+        
+        &:hover,
+        &:focus
+        {
+          background: @colorWetAsphalt;
+          cursor: default;
+        }
+      }
+      
+      &[data-nav="prev"]
+      {
+        left: 5px;
+      }
+      
+      &[data-nav="next"]
+      {
+        right: 5px;
+      }
+    }
+  }
+  
+  .slide-view
+  {
+    overflow: hidden;
+  }
+  
+  .slides
+  {
+    -webkit-transition: -webkit-transform @transitionDefault;
+    -moz-transition: -moz-transform @transitionDefault;
+    -o-transition: -o-transform @transitionDefault;
+    transition: transform @transitionDefault;
+    width: 9999px;
+    
+    &[data-active-slide="1"]
+    {
+      .transform(translate(0, 0));
+      
+      .step[data-slide="1"]
+      {
+        opacity: 1;
+      }
+    }
+    
+    &[data-active-slide="2"]
+    {
+      .transform(translate(@width * -1, 0));
+      
+      .step[data-slide="2"]
+      {
+        opacity: 1;
+      }
+    }
+    
+    &[data-active-slide="3"]
+    {
+      .transform(translate(@width * -2, 0));
+      
+      .step[data-slide="3"]
+      {
+        opacity: 1;
+      }
+    }
+    
+    &[data-active-slide="4"]
+    {
+      .transform(translate(@width * -3, 0));
+      
+      .step[data-slide="4"]
+      {
+        opacity: 1;
+      }
+    }
+    
+    &[data-active-slide="5"]
+    {
+      .transform(translate(@width * -4, 0));
+      
+      .step[data-slide="5"]
+      {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .step
+  {
+    .transition(opacity @transitionDefault);
+    display: inline-block;
+    opacity: 0;
+    padding: 10px;
+    width: @width;
+    vertical-align: top;
+    
+    header
+    {
+      cursor: default;
+      font-size: 1.25em;
+      margin: 0 0 20px;
+      padding: 0;
+    }
+    
+    .content
+    {
+      cursor: default;
+      font-size: .85em;
+    }
+  }
+}
+
+@width: 256px;
+@navHeight: 40px;
+
+@colorClouds: #ecf0f1;
+@colorSilver: #bdc3c7;
+@colorPeterRiver: #3498db;
+@colorWetAsphalt: #34495e;
+@colorMidnightBlue: #2c3e50;
+
+@transitionDefault: 0.25s ease-out 0.10s;
+
+.border-radius(@value)
+{
+  -moz-border-radius: @value;
+  -webkit-border-radius: @value;
+  border-radius: @value;
+}
+
+.transition(@value)
+{
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -o-transition: @value;
+  transition: @value;
+}
+
+.transform(@value)
+{
+  -webkit-transform: @value;
+  -moz-transform: @value;
+  -ms-transform: @value;
+  -o-transform: @value;
+  transform: @value;
+}

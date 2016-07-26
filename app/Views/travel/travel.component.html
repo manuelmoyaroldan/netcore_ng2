@@ -1,0 +1,38 @@
+<div>
+  <div class="how-to-guide js-container">
+    <button type="button" class="button-close">×</button>
+
+    <div class="slide-view">
+    </div>
+
+    <div class="navigation">
+      <button type="button" class="button-nav js-nav disabled" data-nav="prev">Back</button>
+      <div class="nav-state">
+        <span class="current js-slide-no">1</span>/<span class="total">5</span>
+      </div>
+      <button type="button" class="button-nav js-nav" data-nav="next">Next</button>
+    </div>
+  </div>
+  <div class="carousel">
+    <button (click)="prev()">prev</button>
+    <button (click)="next()">next</button>
+    {{step}}
+    <div class="slides">
+      <div class="content" [hidden]="step!=1">
+        A CONTENT
+      </div>
+      <div class="content" [hidden]="step!=2">
+        B CONTENT
+      </div>
+      <div class="content" [hidden]="step!=3">
+        C CONTENT
+      </div>
+      <div class="content" [hidden]="step!=4">
+        D CONTENT
+      </div>
+    </div>
+  <!--<ul class="slides">
+  </ul>-->
+
+</div>
+</div>

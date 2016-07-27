@@ -17,6 +17,7 @@ var travelway_selector_component_1 = require('../../travelway/travelway-selector
 var costcenter_selector_component_1 = require('../../costcenter/costcenter-selector.component');
 var traveltype_selector_component_1 = require('../../traveltype/traveltype-selector.component');
 var travel_document_step1_component_1 = require('./travel-document-step1.component');
+var travel_document_step2_component_1 = require('./travel-document-step2.component');
 var traveldocumentComponent = (function () {
     function traveldocumentComponent(userContext, service, router, route) {
         this.userContext = userContext;
@@ -72,7 +73,7 @@ var traveldocumentComponent = (function () {
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component],
+            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component, travel_document_step2_component_1.traveldocumentstep2Component],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

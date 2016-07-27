@@ -2,7 +2,6 @@
     <!--<select class="form-control" required [(ngModel)]="selected.id" name="costcenter" (ngModelChange)="selectedChange.emit($event);" >
          <option *ngFor="let p of costcenters" [ngValue]="p.id">{{p.name}}</option>
     </select>-->
-    {{idSelected}}
     <select class="form-control" required [(ngModel)]="idSelected" name="costcenter" (ngModelChange)="onChange($event);" >
          <option *ngFor="let p of costcenters" [ngValue]="p.id">{{p.name}}</option>
     </select>

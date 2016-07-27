@@ -45,15 +45,12 @@
             <travel-document-step1 [(current)]="current"></travel-document-step1>
         </div>
         <div class="step" [hidden]="step!=3">
-            <button (click)="clickAddHotel()">Add Travel</button>
-            <div class="row">
-                Hotel
-            </div>
+            <travel-document-step2 [(current)]="current"></travel-document-step2>
         </div>
         <div class="step" [hidden]="step!=4">
-            <button (click)="clickAddHotel()">Add Travel</button>
+            <button (click)="clickAddHotel()">Add Advance</button>
             <div class="row">
-                Advance
+                Advance 
             </div>
         </div>
         <div class="step" [hidden]="step!=5">

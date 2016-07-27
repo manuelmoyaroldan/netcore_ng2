@@ -9,15 +9,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var travelway_service_1 = require('./travelway.service');
 var travelwayselectorComponent = (function () {
-    function travelwayselectorComponent() {
+    function travelwayselectorComponent(service) {
+        this.service = service;
+        this.selectedChange = new core_1.EventEmitter();
+        this.idSelectedChange = new core_1.EventEmitter();
     }
+    travelwayselectorComponent.prototype.ngOnInit = function () {
+        this.list = this.service.getAll();
+    };
+    travelwayselectorComponent.prototype.onChange = function (value) {
+        this.idSelectedChange.emit(value);
+        this.selectedChange.emit(this.list.find(function (c) { return c.id === value; }));
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], travelwayselectorComponent.prototype, "selected", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], travelwayselectorComponent.prototype, "idSelected", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], travelwayselectorComponent.prototype, "selectedChange", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], travelwayselectorComponent.prototype, "idSelectedChange", void 0);
     travelwayselectorComponent = __decorate([
         core_1.Component({
             selector: 'travelway-selector',
-            templateUrl: 'app/Views/travelway/travelway-selector.component.html'
+            templateUrl: 'app/Views/travelway/travelway-selector.component.html',
+            providers: [travelway_service_1.travelwayService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [travelway_service_1.travelwayService])
     ], travelwayselectorComponent);
     return travelwayselectorComponent;
 }());

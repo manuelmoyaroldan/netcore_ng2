@@ -17,6 +17,6 @@ export class traveldocumentstep1Component{
     @Input() current: ITravel;
     @Output() currentChange = new  EventEmitter();
 
-    constructor(){}
+    constructor(){} 
 
 }

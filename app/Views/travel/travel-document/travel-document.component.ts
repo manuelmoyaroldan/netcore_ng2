@@ -13,11 +13,12 @@ import {costcenterselectorComponent} from '../../costcenter/costcenter-selector.
 import {traveltypeselectorComponent} from '../../traveltype/traveltype-selector.component';
 
 import {traveldocumentstep1Component} from './travel-document-step1.component';
+import {traveldocumentstep2Component} from './travel-document-step2.component';
 
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component ],
     providers: [TravelService]
 })
 

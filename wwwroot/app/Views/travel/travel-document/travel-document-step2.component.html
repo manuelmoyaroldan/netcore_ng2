@@ -1,0 +1,22 @@
+<div>
+    <button (click)="clickAddHotel()">Add Travel</button>
+    <div class="row">
+        <li *ngFor="let travelplan of current.travelPlan">
+            <span>{{travelplan.id}}</span> {{travelplan.transportWay.name}}
+        </li>
+    </div>
+    <div class="row">
+        {{selected | json}}
+        <div class="form-group col-md-12">
+            <label>Id</label>
+            <input type="text" class="form-control" [(ngModel)]="selected.id" placeholder="id" readonly="true">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Way of Transport</label>
+            <travelway-selector [(selected)]="selected.transportWay" [(idSelected)]="selected.idTransportWay"></travelway-selector>
+        </div>
+        <div>
+            <button (click)="clickSaveTravelPlan()">Save</button>
+        </div>
+    </div>
+</div>

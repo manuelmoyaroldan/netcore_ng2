@@ -10,11 +10,12 @@ export interface ITravel{
     id_purpose?: number;
     reason?: string;
     id_costcenter?: number;
-    costcenter?: ICostCenter
+    costcenter?: ICostCenter;
+    travelPlan?: ITravelPlan[];
 }
 export interface ITravelType{
     id: number;
-    name: string
+    name?: string
 }
 export interface ITravelPurpose{
     id: number;
@@ -29,5 +30,24 @@ export interface IUser{
 export interface ICostCenter{
     id: number;
     name: string
+}
+export interface ITravelPlan{
+    id: number;
+    travel_yn?: boolean;
+    hotel_yn?: boolean;
+    origin?: string;
+    destination?: string;
+    from?: Date;
+    to?: Date;
+    rounTrip?: boolean;
+    hotel_preference?: string;
+    id_TransportWay?: number;
+    transportWay?: ITransportWay;
+
+}
+export interface ITransportWay{
+    id: number;
+    name?: string;
+    ico?: string;
 }
 

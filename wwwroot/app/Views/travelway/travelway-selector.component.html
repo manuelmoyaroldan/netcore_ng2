@@ -1,3 +1,5 @@
 <div>
-    way of travel
+    <select class="form-control" required [(ngModel)]="idSelected" name="transportway" (ngModelChange)="onChange($event);">
+         <option *ngFor="let p of list" [ngValue]="p.id">{{p.name}}</option>
+    </select>
 </div>

@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var travelway_selector_component_1 = require('../../travelway/travelway-selector.component');
 var traveldocumentstep2Component = (function () {
     function traveldocumentstep2Component() {
+        this.isEdition = false;
+        this.isTravelEdition = false;
+        this.isHotelEdition = false;
     }
     traveldocumentstep2Component.prototype.ngOnInit = function () {
         this.selected = { id: 0 };
@@ -21,6 +24,8 @@ var traveldocumentstep2Component = (function () {
             this.current.travelPlan = [];
         this.current.travelPlan.push(this.selected);
         this.selected = { id: 0 };
+        this.isTravelEdition = false;
+        this.isHotelEdition = false;
     };
     __decorate([
         core_1.Input(), 

@@ -1,6 +1,7 @@
 <div>
     <button (click)="clickAddHotel()">Add Travel</button>
-    <div class="row">
+    <div class="row" [hidden]="current.travelPlan==undefined">
+        Listado
         <li *ngFor="let travelplan of current.travelPlan">
             <span>{{travelplan.id}}</span> {{travelplan.transportWay.name}}
         </li>
@@ -19,4 +20,11 @@
             <button (click)="clickSaveTravelPlan()">Save</button>
         </div>
     </div>
+    <div class="row" [hidden]="current.travelPlan!=undefined && current.travelPlan.length>0">
+        Do you want the Travel Agency to book your Travel ?
+    </div>
+        <div class="row">
+        Do you want the Travel Agency to book your Hotel ?
+    </div>
+
 </div>

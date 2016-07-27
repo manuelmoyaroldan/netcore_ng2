@@ -13,6 +13,9 @@ export class traveldocumentstep2Component{
     @Input() current:ITravel;
 
     selected: ITravelPlan;
+    isEdition: boolean=false;
+    isTravelEdition: boolean=false;
+    isHotelEdition: boolean=false;
 
     constructor(){
     }
@@ -25,6 +28,9 @@ export class traveldocumentstep2Component{
         if(this.current.travelPlan==undefined) this.current.travelPlan=[];
         this.current.travelPlan.push(this.selected);
         this.selected={id: 0};
+        this.isTravelEdition=false;
+        this.isHotelEdition=false;
     }
-    
+
+        
 }

@@ -22,6 +22,10 @@ var traveldocumentstep1Component = (function () {
         __metadata('design:type', Object)
     ], traveldocumentstep1Component.prototype, "current", void 0);
     __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], traveldocumentstep1Component.prototype, "step", void 0);
+    __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], traveldocumentstep1Component.prototype, "currentChange", void 0);

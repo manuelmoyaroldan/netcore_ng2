@@ -15,6 +15,7 @@ import {traveltypeselectorComponent} from '../../traveltype/traveltype-selector.
 
 export class traveldocumentstep1Component{
     @Input() current: ITravel;
+    @Input() step: number;
     @Output() currentChange = new  EventEmitter();
 
     constructor(){} 

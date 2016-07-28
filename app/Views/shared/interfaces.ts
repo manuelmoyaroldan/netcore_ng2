@@ -12,6 +12,7 @@ export interface ITravel{
     id_costcenter?: number;
     costcenter?: ICostCenter;
     travelPlan?: ITravelPlan[];
+    advance?: IAdvance[];
 }
 export interface ITravelType{
     id: number;
@@ -50,4 +51,14 @@ export interface ITransportWay{
     name?: string;
     ico?: string;
 }
-
+export interface IAdvance{
+    id: number;
+    description?: string;
+    amount?: number;
+    id_currency?:number;
+    currency?: ICurrency;
+}
+export interface ICurrency{
+    id: number;
+    description?: string;
+}

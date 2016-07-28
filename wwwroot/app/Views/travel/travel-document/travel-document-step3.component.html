@@ -1,0 +1,34 @@
+<div>
+    +++{{step}}
+    <!--LIST-->
+    <div class="row" [hidden]="current.advance.length<1 || isEdition">
+        Listado
+        <button (click)="clickNewAdvance()">Add Advance</button>
+        <li *ngFor="let advance of current.advance">
+            <span>{{advance.id}}</span> {{advance.description}}
+        </li>
+    </div>
+    <div class="row" [hidden]="current.advance.length>0 && !isEdition" >
+        <!--ADVANCE QUESTION-->
+        <div class="row" [hidden]="current.advance.length>0 || isEdition ">
+            Do you want to request an Advance ?
+            <button (click)="clickYesAdvance()">Yes</button><button (click)="clickNoAdvance()">No</button>
+        </div>
+        <!--ADVANCE EDITOR-->
+        <div class="row" [hidden]="!isEdition">
+            {{selected | json}}
+            <div class="form-group col-md-12">
+                <label>Id</label>
+                <input type="text" class="form-control" [(ngModel)]="selected.id" placeholder="id" readonly="true">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Description</label>
+                <input type="text" class="form-control" [(ngModel)]="selected.description" placeholder="description" >
+            </div>
+            <div>
+                <button (click)="clickSaveAdvance()">Save</button><button (click)="clickCancelAdvance()">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

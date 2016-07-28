@@ -18,6 +18,7 @@ var costcenter_selector_component_1 = require('../../costcenter/costcenter-selec
 var traveltype_selector_component_1 = require('../../traveltype/traveltype-selector.component');
 var travel_document_step1_component_1 = require('./travel-document-step1.component');
 var travel_document_step2_component_1 = require('./travel-document-step2.component');
+var travel_document_step3_component_1 = require('./travel-document-step3.component');
 var traveldocumentComponent = (function () {
     function traveldocumentComponent(userContext, service, router, route) {
         this.userContext = userContext;
@@ -40,13 +41,13 @@ var traveldocumentComponent = (function () {
         };
     }
     traveldocumentComponent.prototype.ngOnInit = function () {
+        // **Parameter**
         // (+) converts string 'id' to a number
         var id = +this.route.snapshot.params['id'];
         var mode = this.route.snapshot.params['mode'];
-        // console.log('Travel Document on Init');
-        // console.log(id);
-        // console.log(mode);
+        //**Get Travels**
         this.travels = this.service.getTravels();
+        //**Initialize Current Document
         if (id == 0) {
             this.current.id = 0;
             this.current.destination = '';
@@ -73,7 +74,7 @@ var traveldocumentComponent = (function () {
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component, travel_document_step2_component_1.traveldocumentstep2Component],
+            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component, travel_document_step2_component_1.traveldocumentstep2Component, travel_document_step3_component_1.traveldocumentstep3Component],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

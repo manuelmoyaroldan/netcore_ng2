@@ -14,11 +14,12 @@ import {traveltypeselectorComponent} from '../../traveltype/traveltype-selector.
 
 import {traveldocumentstep1Component} from './travel-document-step1.component';
 import {traveldocumentstep2Component} from './travel-document-step2.component';
+import {traveldocumentstep3Component} from './travel-document-step3.component';
 
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component, traveldocumentstep3Component ],
     providers: [TravelService]
 })
 
@@ -44,13 +45,13 @@ export class traveldocumentComponent implements OnInit {
     }
 
     ngOnInit(){
+        // **Parameter**
         // (+) converts string 'id' to a number
         let id = +this.route.snapshot.params['id'];
         let mode=this.route.snapshot.params['mode'];
-        // console.log('Travel Document on Init');
-        // console.log(id);
-        // console.log(mode);
+        //**Get Travels**
         this.travels=this.service.getTravels();
+        //**Initialize Current Document
         if(id==0){
             this.current.id=0;
             this.current.destination='';
@@ -74,7 +75,5 @@ export class traveldocumentComponent implements OnInit {
     clickNext(){
         this.step=this.step+1;
     }
-
-
 
 }

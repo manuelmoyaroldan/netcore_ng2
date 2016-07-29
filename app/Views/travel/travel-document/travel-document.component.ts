@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
+
 import {TravelService} from '../shared/travel.service';
 //import {ITravel} from '../../../Views/shared/interfaces';
 import {ITravel, ITravelPurpose, ICostCenter} from '../../../Views/shared/interfaces';
@@ -19,7 +21,7 @@ import {traveldocumentstep3Component} from './travel-document-step3.component';
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component, traveldocumentstep3Component ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component, traveldocumentstep3Component,MD_BUTTON_DIRECTIVES ],
     providers: [TravelService]
 })
 

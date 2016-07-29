@@ -9,19 +9,21 @@
     '@angular':                   'app/lib/@angular',
     'angular2-in-memory-web-api': 'app/lib/angular2-in-memory-web-api',
     'rxjs':                       'app/lib/rxjs',
-    'primeng':                    'app/lib/primeng'
+    'primeng':                    'app/lib/primeng',
+    '@angular2-material':          'app/lib/@angular-material'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'texp.min.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'primeng':                    { defaultExtension: 'js' }
+    'primeng':                    { defaultExtension: 'js' },
+    '@angular2-material':          { defaultExtension: 'js' },
   };
   var ngPackageNames = [
     'common',
     'compiler',
-    'core',
+    'core', 
     'forms',
     'http',
     'platform-browser',
@@ -30,6 +32,8 @@
     'router-deprecated',
     'upgrade',
   ];
+
+
   // Individual files (~300 requests):
   function packIndex(pkgName) {
     packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };

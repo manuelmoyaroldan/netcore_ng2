@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var button_1 = require('@angular2-material/button');
 var travel_service_1 = require('../shared/travel.service');
 var user_context_service_1 = require('../../user/user-context.service');
 var purpose_selector_component_1 = require('../../purpose/purpose-selector.component');
@@ -74,7 +75,7 @@ var traveldocumentComponent = (function () {
         core_1.Component({
             selector: 'travel-document',
             templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component, travel_document_step2_component_1.traveldocumentstep2Component, travel_document_step3_component_1.traveldocumentstep3Component],
+            directives: [purpose_selector_component_1.purposeselectorComponent, travelway_selector_component_1.travelwayselectorComponent, costcenter_selector_component_1.costcenterselectorComponent, traveltype_selector_component_1.traveltypeselectorComponent, travel_document_step1_component_1.traveldocumentstep1Component, travel_document_step2_component_1.traveldocumentstep2Component, travel_document_step3_component_1.traveldocumentstep3Component, button_1.MD_BUTTON_DIRECTIVES],
             providers: [travel_service_1.TravelService]
         }), 
         __metadata('design:paramtypes', [user_context_service_1.UserContextService, travel_service_1.TravelService, router_1.Router, router_1.ActivatedRoute])

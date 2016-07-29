@@ -27,7 +27,21 @@
     "bootstrap": "^3.3.6",
 
     "primeng": "1.0.0-beta.9",
-    "primeui": "4.1.12"
+    "primeui": "4.1.12",
+
+    "@angular2-material/button": "^2.0.0-alpha.6",
+    "@angular2-material/card": "^2.0.0-alpha.6",
+    "@angular2-material/checkbox": "^2.0.0-alpha.6",
+    "@angular2-material/core": "^2.0.0-alpha.6",
+    "@angular2-material/input": "^2.0.0-alpha.6",
+    "@angular2-material/list": "^2.0.0-alpha.6",
+    "@angular2-material/progress-circle": "^2.0.0-alpha.6",
+    "@angular2-material/progress-bar": "^2.0.0-alpha.6",
+    "@angular2-material/radio": "^2.0.0-alpha.6",
+    "@angular2-material/sidenav": "^2.0.0-alpha.6",
+    "@angular2-material/toolbar": "^2.0.0-alpha.6",
+    "@angular2-material/tabs": "^2.0.0-alpha.6",
+    "@angular2-material/icon": "^2.0.0-alpha.6"    
   },
   "devDependencies": {
     "browser-sync": "^2.12.8",

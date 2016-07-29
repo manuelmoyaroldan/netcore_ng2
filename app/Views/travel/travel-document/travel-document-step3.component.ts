@@ -1,10 +1,16 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 
+import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
+import {MD_INPUT_DIRECTIVES, MdInput} from '@angular2-material/input';
+import { MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon';
+
 import {ITravel, IAdvance} from '../../shared/interfaces';
 
 @Component({
     selector: 'travel-document-step3',
-    templateUrl: 'app/Views/travel/travel-document/travel-document-step3.component.html'
+    templateUrl: 'app/Views/travel/travel-document/travel-document-step3.component.html',
+    directives: [MD_LIST_DIRECTIVES, MD_INPUT_DIRECTIVES, MdInput, MD_ICON_DIRECTIVES],
+    providers: [MdIconRegistry]
 })
 
 export class traveldocumentstep3Component {

@@ -21,7 +21,7 @@ import {traveldocumentstep3Component} from './travel-document-step3.component';
 @Component({
     selector: 'travel-document',
     templateUrl: 'app/Views/travel/travel-document/travel-document.component.html',
-    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component, traveldocumentstep3Component,MD_BUTTON_DIRECTIVES ],
+    directives: [purposeselectorComponent, travelwayselectorComponent,costcenterselectorComponent, traveltypeselectorComponent, traveldocumentstep1Component, traveldocumentstep2Component, traveldocumentstep3Component, MD_BUTTON_DIRECTIVES],
     providers: [TravelService]
 })
 

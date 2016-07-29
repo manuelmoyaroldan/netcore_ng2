@@ -10,7 +10,7 @@
     'angular2-in-memory-web-api': 'app/lib/angular2-in-memory-web-api',
     'rxjs':                       'app/lib/rxjs',
     'primeng':                    'app/lib/primeng',
-    '@angular2-material':          'app/lib/@angular-material'
+    '@angular2-material':          'app/lib/@angular2-material'  
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {

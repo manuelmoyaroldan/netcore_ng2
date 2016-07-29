@@ -5,20 +5,29 @@
     <br> {{current | json}}
 
     <div class="container">
-        <button (click)="clickPrev()">Prev</button>
-        {{step}}
+        <button (click)="clickPrev()">Prev</button> {{step}}
         <button (click)="clickNext()">Next</button>
-        <div class="step" [hidden]="step!=1" >
+        <div class="step" [hidden]="step!=1">
             <div class="row">
                 propertiesssssss
                 <button md-button>FLAT</button>
+                <button md-raised-button>RAISED</button>
+                <button md-icon-button>
+                    <md-icon class="md-24">favorite</md-icon>
+                </button>
+                <button md-fab>
+                    <md-icon class="md-24">add</md-icon>
+                </button>
+                <button md-mini-fab>
+                    <md-icon class="md-24">add</md-icon>
+                </button>
             </div>
         </div>
         <div class="step" [hidden]="step!=2">
             <travel-document-step1 [(current)]="current"></travel-document-step1>
         </div>
         <div class="step" [hidden]="step!=3">
-            <travel-document-step2 [(current)]="current" [(step)]="step" ></travel-document-step2>
+            <travel-document-step2 [(current)]="current" [(step)]="step"></travel-document-step2>
         </div>
         <div class="step" [hidden]="step!=4">
             <travel-document-step3 [(current)]="current" [(step)]="step"></travel-document-step3>

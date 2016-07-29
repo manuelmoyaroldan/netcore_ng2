@@ -9,6 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var list_1 = require('@angular2-material/list');
+var input_1 = require('@angular2-material/input');
+var icon_1 = require('@angular2-material/icon');
 var traveldocumentstep3Component = (function () {
     function traveldocumentstep3Component() {
         this.stepChange = new core_1.EventEmitter();
@@ -55,7 +58,9 @@ var traveldocumentstep3Component = (function () {
     traveldocumentstep3Component = __decorate([
         core_1.Component({
             selector: 'travel-document-step3',
-            templateUrl: 'app/Views/travel/travel-document/travel-document-step3.component.html'
+            templateUrl: 'app/Views/travel/travel-document/travel-document-step3.component.html',
+            directives: [list_1.MD_LIST_DIRECTIVES, input_1.MD_INPUT_DIRECTIVES, input_1.MdInput, icon_1.MD_ICON_DIRECTIVES],
+            providers: [icon_1.MdIconRegistry]
         }), 
         __metadata('design:paramtypes', [])
     ], traveldocumentstep3Component);

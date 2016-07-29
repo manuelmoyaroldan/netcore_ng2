@@ -9,14 +9,16 @@
     '@angular':                   'app/lib/@angular',
     'angular2-in-memory-web-api': 'app/lib/angular2-in-memory-web-api',
     'rxjs':                       'app/lib/rxjs',
-    'primeng':                    'app/lib/primeng'
+    'primeng':                    'app/lib/primeng',
+    '@angular2-material':          'app/lib/@angular2-material'  
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'primeng':                    { defaultExtension: 'js' }
+    'primeng':                    { defaultExtension: 'js' },
+    '@angular2-material':          { defaultExtension: 'js' },
   };
   var ngPackageNames = [
     'common',
@@ -30,6 +32,25 @@
     'router-deprecated',
     'upgrade',
   ];
+  
+  //-----------------------------material
+  var materialPkgs = [
+    'core',
+    'button',
+    'list',
+    'input',
+    'icon',
+  ];
+
+  function packMaterial(pkgName) {
+    packages['@angular2-material/' + pkgName] = { main: pkgName + '.js', defaultExtension: 'js'};
+  }
+
+  var setMaterialConfig = packMaterial;
+  materialPkgs.forEach(setMaterialConfig);
+  //-----------------------material
+  
+  
   // Individual files (~300 requests):
   function packIndex(pkgName) {
     packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };

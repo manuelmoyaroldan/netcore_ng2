@@ -4,11 +4,22 @@
     <div class="row" [hidden]="current.advance.length<1 || isEdition">
         Listado
         <button (click)="clickNewAdvance()">Add Advance</button>
+        <button (click)="clickNewAdvance()" md-fab><md-icon>motorcycle</md-icon></button>
         <li *ngFor="let advance of current.advance">
             <span>{{advance.id}}</span> {{advance.description}}
         </li>
+        <md-list>
+            <md-list-item *ngFor="let advance of current.advance">
+                <img md-list-avatar src="..." alt="...">
+                <h3 md-line style="overflow-y: hidden;"> {{advance.description}} </h3>
+                <p md-line>
+                    <span> {{advance.description}} </span>
+                    <span class="demo-2"> -- {{advance.description}} </span>
+                </p>
+            </md-list-item>
+        </md-list>
     </div>
-    <div class="row" [hidden]="current.advance.length>0 && !isEdition" >
+    <div class="row" [hidden]="current.advance.length>0 && !isEdition">
         <!--ADVANCE QUESTION-->
         <div class="row" [hidden]="current.advance.length>0 || isEdition ">
             Do you want to request an Advance ?
@@ -23,7 +34,10 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Description</label>
-                <input type="text" class="form-control" [(ngModel)]="selected.description" placeholder="description" >
+                <input type="text" class="form-control" [(ngModel)]="selected.description" placeholder="description">
+            </div>
+            <div class="col-md-12">
+                <md-input name="test" [(ngModel)]="selected.description" placeholder="Advance Description"></md-input>
             </div>
             <div>
                 <button (click)="clickSaveAdvance()">Save</button><button (click)="clickCancelAdvance()">Cancel</button>

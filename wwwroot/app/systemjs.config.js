@@ -18,7 +18,7 @@
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'primeng':                    { defaultExtension: 'js' },
-    '@angular2-material':          { defaultExtension: 'js' },
+    '@angular2-material':          { defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',
